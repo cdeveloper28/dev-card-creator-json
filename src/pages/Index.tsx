@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import CardForm, { BusinessCardData } from "@/components/CardForm";
 import BusinessCard from "@/components/BusinessCard";
@@ -43,13 +44,15 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-12 px-4 relative overflow-hidden">
-      {/* Enhanced abstract background elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-30 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-60 h-60 rounded-full bg-purple-600 blur-3xl animate-pulse"></div>
-        <div className="absolute top-3/4 left-1/3 w-80 h-80 rounded-full bg-blue-600 blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-amber-500 blur-3xl animate-pulse" style={{ animationDuration: '12s' }}></div>
-        <div className="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full bg-emerald-500 blur-3xl animate-pulse" style={{ animationDuration: '10s' }}></div>
+      {/* Background blur elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-40 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-60 h-60 rounded-full bg-amber-600/30 blur-3xl animate-pulse"></div>
+        <div className="absolute top-3/4 left-1/3 w-80 h-80 rounded-full bg-blue-600/20 blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-purple-500/20 blur-3xl animate-pulse" style={{ animationDuration: '12s' }}></div>
       </div>
+      
+      {/* Wood desk background */}
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-amber-900/30 to-transparent"></div>
       
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px]"></div>
       
@@ -95,7 +98,7 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col items-center">
-            <div className="mb-10 w-full flex justify-center hover:-rotate-1 transition-transform duration-300">
+            <div className="card-display-container mb-10 w-full flex justify-center">
               <BusinessCard cardData={cardData} cardRef={cardRef} />
             </div>
             

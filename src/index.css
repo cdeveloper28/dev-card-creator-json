@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,47 +69,68 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.bg-blur-overlay {
+.card-3d {
+  background: #1A1A1A;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-display-container {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  padding: 30px;
+}
+
+.card-display-container:before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  z-index: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/lovable-uploads/737704f2-8c38-447f-9c3e-8c718ae7b319.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  opacity: 0.8;
+  border-radius: 16px;
+  z-index: -1;
 }
 
-.code-editor {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.3px;
+.card-display-container:hover .card-3d {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
 .editor-toolbar {
   font-family: 'JetBrains Mono', monospace;
+  background-color: #1A1A1A;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .editor-body {
-  background-color: #1E1E1E;
+  background-color: #121212;
 }
 
 .line-numbers {
   color: #6B7280;
   text-align: right;
+  background-color: #121212;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .json-property {
-  color: #9CDCFE;
+  color: #F87171; /* Reddish color for properties */
 }
 
 .json-value {
-  color: #CE9178;
+  color: #FBBF24; /* Yellow color for values */
 }
 
 .json-punctuation {
-  color: #D4D4D4;
+  color: #D1D5DB; /* Light gray for punctuation */
 }
 
 .window-dot {
@@ -127,4 +149,10 @@
 
 .dot-green {
   background-color: #27C93F;
+}
+
+/* Background grid styling */
+.bg-grid-white {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }

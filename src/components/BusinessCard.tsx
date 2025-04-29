@@ -14,14 +14,13 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
   return (
     <div
       ref={cardRef}
-      className="w-full max-w-md rounded-lg overflow-hidden shadow-2xl code-editor glassmorphism-card"
+      className="w-full max-w-md rounded-lg overflow-hidden shadow-2xl code-editor card-3d"
       style={{
-        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)",
+        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.5)",
         transform: "perspective(1000px) rotateX(2deg)",
         position: "relative",
       }}
     >
-      <div className="bg-blur-overlay"></div>
       <CardToolbar />
       <div className="editor-body p-0 relative z-10">
         <div className="flex text-base">
@@ -34,16 +33,12 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
             <div style={{ height: lineHeight }}>5</div>
             <div style={{ height: lineHeight }}>6</div>
             <div style={{ height: lineHeight }}>7</div>
-            <div style={{ height: lineHeight }}>8</div>
           </div>
           
           {/* JSON content */}
           <div className="py-3 flex-1">
             <div style={{ height: lineHeight }} className="whitespace-pre">
-              <span className="text-gray-400">// Developer Business Card</span>
-            </div>
-            <div style={{ height: lineHeight }} className="whitespace-pre">
-              <span className="text-white">Business Card.json</span>
+              <span className="text-gray-400">Business Card.json</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre">
               <span className="json-punctuation">{"{"}</span>
