@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import CardForm, { BusinessCardData } from "@/components/CardForm";
 import BusinessCard from "@/components/BusinessCard";
-import { downloadCardAsImage } from "@/lib/downloadUtils";
+import { downloadCardAsImage, copyCardAsImage } from "@/lib/downloadUtils";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Download, Copy, FileJson } from "lucide-react";
@@ -34,28 +34,11 @@ const Index = () => {
   };
   
   const handleCopy = async () => {
-    try {
-      if (!cardRef.current) throw new Error("Card reference not found");
-      
-      const canvas = await html2canvas(cardRef.current, {
-        scale: 2,
-        backgroundColor: null,
-      });
-      
-      canvas.toBlob(async (blob) => {
-        if (!blob) throw new Error("Failed to create image blob");
-        
-        try {
-          await navigator.clipboard.write([
-            new ClipboardItem({ [blob.type]: blob }),
-          ]);
-          toast.success("Business card copied to clipboard!");
-        } catch (err) {
-          toast.error("Failed to copy to clipboard. Download instead.");
-        }
-      });
-    } catch (error) {
-      toast.error("Failed to copy card: " + (error as Error).message);
+    const success = await copyCardAsImage(cardRef);
+    if (success) {
+      toast.success("Business card copied to clipboard!");
+    } else {
+      toast.error("Failed to copy to clipboard. Download instead.");
     }
   };
   
