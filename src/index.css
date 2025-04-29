@@ -1,114 +1,114 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
-    --editor-bg: 215 28% 17%;
-    --editor-toolbar: 220 26% 14%;
-    --editor-line: 220 13% 69%;
-    --json-property: 6 93% 71%;
-    --json-value: 56 100% 65%;
-    --json-punctuation: 0 0% 100%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 212.7 26.8% 83.9;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bg-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 0;
 }
 
 .code-editor {
   font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+}
+
+.editor-toolbar {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.editor-body {
+  background-color: #1E1E1E;
 }
 
 .line-numbers {
-  color: hsl(var(--editor-line));
-  user-select: none;
+  color: #6B7280;
   text-align: right;
-  padding-right: 0.5rem;
-  opacity: 0.6;
 }
 
 .json-property {
-  color: hsl(var(--json-property));
+  color: #9CDCFE;
 }
 
 .json-value {
-  color: hsl(var(--json-value));
+  color: #CE9178;
 }
 
 .json-punctuation {
-  color: hsl(var(--json-punctuation));
+  color: #D4D4D4;
 }
 
 .window-dot {
@@ -118,21 +118,13 @@
 }
 
 .dot-red {
-  background-color: #ff5f56;
+  background-color: #FF6059;
 }
 
 .dot-yellow {
-  background-color: #ffbd2e;
+  background-color: #FFBD2E;
 }
 
 .dot-green {
-  background-color: #27c93f;
-}
-
-.editor-toolbar {
-  background-color: hsl(var(--editor-toolbar));
-}
-
-.editor-body {
-  background-color: hsl(var(--editor-bg));
+  background-color: #27C93F;
 }
