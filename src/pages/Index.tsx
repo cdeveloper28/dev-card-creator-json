@@ -43,8 +43,15 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-12 px-4 relative overflow-hidden">
+      {/* Abstract background elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-20 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 rounded-full bg-purple-500 blur-3xl"></div>
+        <div className="absolute top-3/4 left-1/3 w-60 h-60 rounded-full bg-blue-500 blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-amber-500 blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">
             Developer <span className="text-yellow-400">Business Card.json</span> Generator
