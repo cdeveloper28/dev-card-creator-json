@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { BusinessCardData } from "./CardForm";
 import CardToolbar from "./CardToolbar";
 
@@ -14,16 +14,10 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
   return (
     <div
       ref={cardRef}
-      className="w-full max-w-md rounded-lg overflow-hidden shadow-2xl code-editor glassmorphism-card"
-      style={{
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-        transform: "perspective(1000px) rotateX(2deg)",
-        position: "relative",
-      }}
+      className="w-full max-w-md rounded-lg overflow-hidden shadow-lg code-editor"
     >
-      <div className="bg-blur-overlay"></div>
       <CardToolbar />
-      <div className="editor-body p-0 relative z-10">
+      <div className="editor-body p-0">
         <div className="flex text-base">
           {/* Line numbers */}
           <div className="line-numbers py-3 px-3 select-none w-8">
