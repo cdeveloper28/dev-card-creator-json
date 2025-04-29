@@ -3,134 +3,112 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
+
     --radius: 0.5rem;
+
+    --editor-bg: 215 28% 17%;
+    --editor-toolbar: 220 26% 14%;
+    --editor-line: 220 13% 69%;
+    --json-property: 6 93% 71%;
+    --json-value: 56 100% 65%;
+    --json-punctuation: 0 0% 100%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9;
+    --ring: 212.7 26.8% 83.9%;
   }
+}
 
+@layer base {
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
-.glassmorphism-card {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.7px);
-  -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.card-3d {
-  background: #1A1A1A;
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-display-container {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease;
-  padding: 30px;
-}
-
-.card-display-container:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/lovable-uploads/737704f2-8c38-447f-9c3e-8c718ae7b319.png');
-  background-size: cover;
-  background-position: center;
-  filter: blur(8px);
-  opacity: 0.8;
-  border-radius: 16px;
-  z-index: -1;
-}
-
-.card-display-container:hover .card-3d {
-  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-5px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-}
-
-.editor-toolbar {
+.code-editor {
   font-family: 'JetBrains Mono', monospace;
-  background-color: #1A1A1A;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.editor-body {
-  background-color: #121212;
 }
 
 .line-numbers {
-  color: #6B7280;
+  color: hsl(var(--editor-line));
+  user-select: none;
   text-align: right;
-  background-color: #121212;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding-right: 0.5rem;
+  opacity: 0.6;
 }
 
 .json-property {
-  color: #F87171; /* Reddish color for properties */
+  color: hsl(var(--json-property));
 }
 
 .json-value {
-  color: #FBBF24; /* Yellow color for values */
+  color: hsl(var(--json-value));
 }
 
 .json-punctuation {
-  color: #D1D5DB; /* Light gray for punctuation */
+  color: hsl(var(--json-punctuation));
 }
 
 .window-dot {
@@ -140,19 +118,56 @@
 }
 
 .dot-red {
-  background-color: #FF6059;
+  background-color: #ff5f56;
 }
 
 .dot-yellow {
-  background-color: #FFBD2E;
+  background-color: #ffbd2e;
 }
 
 .dot-green {
-  background-color: #27C93F;
+  background-color: #27c93f;
 }
 
-/* Background grid styling */
-.bg-grid-white {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+.editor-toolbar {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+
+.editor-body {
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.glassmorphism-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glassmorphism-card:hover {
+  transform: perspective(1000px) rotateX(2deg) scale(1.02) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+}
+
+.bg-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, 
+    rgba(255, 255, 255, 0.05) 0%, 
+    rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+

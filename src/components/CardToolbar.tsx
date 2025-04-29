@@ -12,32 +12,26 @@ const CardToolbar: React.FC = () => {
           <div className="window-dot dot-green"></div>
         </div>
         
-        <div className="text-white font-medium text-sm flex items-center gap-2">
-          <span>Business Card.json</span>
+        <div className="text-white font-medium">
+          Business Card.json
         </div>
         
         <div className="flex items-center">
-          <button className="text-white opacity-70 hover:opacity-100 transition">
+          <button className="text-white opacity-70 hover:opacity-100">
             <MoreHorizontal size={16} />
           </button>
         </div>
       </div>
       
-      <div className="bg-[#1A1A1A] px-3 py-1.5 flex items-center space-x-4 border-b border-gray-700/30">
-        <button className="text-gray-400 hover:text-white transition-colors">
-          <FileJson size={16} />
-        </button>
-        <button className="text-gray-400 hover:text-white transition-colors">
-          <Copy size={16} />
-        </button>
-        <button className="text-gray-400 hover:text-white transition-colors">
-          <Download size={16} />
-        </button>
-        <button className="text-gray-400 hover:text-white transition-colors">
-          <RefreshCw size={16} />
-        </button>
-        <button className="text-gray-400 hover:text-white transition-colors">
-          <Code size={16} />
+      <div className="bg-[#252525] px-3 py-1.5 flex items-center space-x-4 border-b border-gray-700">
+        <FileJson className="text-gray-400" size={16} />
+        <Copy className="text-gray-400" size={16} />
+        <Download className="text-gray-400" size={16} />
+        <RefreshCw className="text-gray-400" size={16} />
+        <Code className="text-gray-400" size={16} />
+        <div className="flex-1"></div>
+        <button className="text-gray-400">
+          <MoreHorizontal size={16} />
         </button>
       </div>
     </div>
