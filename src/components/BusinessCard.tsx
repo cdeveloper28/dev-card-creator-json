@@ -16,7 +16,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
       ref={cardRef}
       className="w-full max-w-md rounded-lg overflow-hidden shadow-2xl code-editor glassmorphism-card"
       style={{
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)",
         transform: "perspective(1000px) rotateX(2deg)",
         position: "relative",
       }}
@@ -33,10 +33,15 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
             <div style={{ height: lineHeight }}>4</div>
             <div style={{ height: lineHeight }}>5</div>
             <div style={{ height: lineHeight }}>6</div>
+            <div style={{ height: lineHeight }}>7</div>
+            <div style={{ height: lineHeight }}>8</div>
           </div>
           
           {/* JSON content */}
           <div className="py-3 flex-1">
+            <div style={{ height: lineHeight }} className="whitespace-pre">
+              <span className="text-gray-400">// Developer Business Card</span>
+            </div>
             <div style={{ height: lineHeight }} className="whitespace-pre">
               <span className="text-white">Business Card.json</span>
             </div>
@@ -58,13 +63,13 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
             <div style={{ height: lineHeight }} className="whitespace-pre pl-4">
               <span className="json-property">"email"</span>
               <span className="json-punctuation">: </span>
-              <span className="json-value">{cardData.email}</span>
+              <span className="json-value">"{cardData.email}"</span>
               <span className="json-punctuation">,</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre pl-4">
               <span className="json-property">"link"</span>
               <span className="json-punctuation">: </span>
-              <span className="json-value">{cardData.link}</span>
+              <span className="json-value">"{cardData.link}"</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre">
               <span className="json-punctuation">{"}"}</span>
