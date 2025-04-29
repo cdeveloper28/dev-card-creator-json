@@ -1,11 +1,10 @@
-
 import React, { useState, useRef } from "react";
 import CardForm, { BusinessCardData } from "@/components/CardForm";
 import BusinessCard from "@/components/BusinessCard";
 import { downloadCardAsImage, copyCardAsImage } from "@/lib/downloadUtils";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { Download, Copy, FileJson, GitHub, Code, Share2 } from "lucide-react";
+import { Download, Copy, FileJson, Github, Code, Share2 } from "lucide-react";
 
 const Index = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -72,7 +71,7 @@ const Index = () => {
               100% Genuine Developer Aesthetic
             </span>
             <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 backdrop-blur-sm">
-              <GitHub size={14} />
+              <Github size={14} />
               Open Source
             </span>
           </div>
