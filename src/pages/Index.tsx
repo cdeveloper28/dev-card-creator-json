@@ -9,10 +9,10 @@ import { Download, Copy, FileJson, Github, Code, Share2 } from "lucide-react";
 const Index = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [cardData, setCardData] = useState<BusinessCardData>({
-    name: "@fr0gger_",
-    title: "Malware Therapist",
-    email: "my@email.com",
-    link: "securitybreak.io",
+    name: "",
+    title: "",
+    email: "",
+    link: "",
   });
   
   const cardRef = useRef<HTMLDivElement>(null);
@@ -56,11 +56,11 @@ const Index = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <header className="text-center mb-16">
           <div className="inline-block mb-6 p-2 bg-white/5 rounded-xl backdrop-blur-sm border border-gray-800">
-            <Code className="text-yellow-400 h-8 w-8" />
+            <Code className="text-gray-400 h-8 w-8" />
           </div>
-          <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-200 to-yellow-400 mb-6">
-            Developer <span className="text-yellow-400">Business Card.json</span> Generator
-          </h1>
+          <h3 className="text-5xl font-bold bg-clip-text text-transparent bg-white mb-6">
+            Developer <span className="text-gray-400">Business Card.json</span> Generator
+          </h3>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
             Create your own code-styled business card as a JSON object. Fill in your details and share your developer identity.
           </p>
@@ -68,18 +68,20 @@ const Index = () => {
           <div className="flex items-center justify-center gap-4 mt-8">
             <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 backdrop-blur-sm">
               <span className="h-2 w-2 bg-green-400 rounded-full animate-pulse"></span>
-              100% Genuine Developer Aesthetic
+              100%  Developer Aesthetic
             </span>
+            <a href="https://buymeacoffee.com/colice" target="_blank" rel="noopener noreferrer">
             <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 backdrop-blur-sm">
               <Github size={14} />
-              Open Source
+              Donate
             </span>
+            </a>
           </div>
         </header>
         
         <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
           <div className="flex flex-col items-center">
-            <div className="w-full p-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl mb-6">
+            <div className="w-full p-1 bg-gray-600 rounded-xl mb-6">
               <div className="bg-gray-900 rounded-lg p-4">
                 <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <FileJson className="text-blue-400" size={20} />
@@ -110,26 +112,9 @@ const Index = () => {
                 Download Card
               </Button>
               
-              <Button
-                variant="secondary"
-                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
-                onClick={handleCopy}
-                disabled={!formSubmitted}
-                size="lg"
-              >
-                <Copy size={18} />
-                Copy to Clipboard
-              </Button>
+             
               
-              <Button
-                variant="outline"
-                className="flex items-center gap-2 border-gray-700 hover:border-gray-500"
-                disabled={!formSubmitted}
-                size="lg"
-              >
-                <Share2 size={18} />
-                Share
-              </Button>
+            
             </div>
           </div>
         </div>

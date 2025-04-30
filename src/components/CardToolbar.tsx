@@ -24,7 +24,7 @@ const CardToolbar: React.FC = () => {
         </div>
       </div>
       
-      <div className="bg-[#252525] px-3 py-1.5 flex items-center space-x-4 border-b border-gray-700/70 backdrop-blur-md">
+      <div className="bg-[#161a1b] px-3 py-1.5 flex items-center space-x-4 border-b border-gray-700/70 backdrop-blur-md">
         <button className="text-gray-400 hover:text-white transition-colors">
           <FileJson size={16} />
         </button>

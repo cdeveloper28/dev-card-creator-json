@@ -91,7 +91,7 @@
 }
 
 .editor-body {
-  background-color: #1E1E1E;
+  background-color: #0e1414;
 }
 
 .line-numbers {
@@ -100,11 +100,11 @@
 }
 
 .json-property {
-  color: #9CDCFE;
+  color: #d19782;
 }
 
 .json-value {
-  color: #CE9178;
+  color: #d5cb72;
 }
 
 .json-punctuation {
@@ -118,13 +118,13 @@
 }
 
 .dot-red {
-  background-color: #FF6059;
+  background-color: #c24b37;
 }
 
 .dot-yellow {
-  background-color: #FFBD2E;
+  background-color: #c99337;
 }
 
 .dot-green {
-  background-color: #27C93F;
+  background-color: #7aa22f;
 }
