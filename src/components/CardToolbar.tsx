@@ -14,7 +14,7 @@ const CardToolbar: React.FC = () => {
         
         <div className="text-white font-medium text-sm flex items-center gap-2">
           <FileJson size={14} className="text-blue-400" />
-          <span>Business Card.json</span>
+          <span>Bless Card.json</span>
         </div>
         
         <div className="flex items-center">

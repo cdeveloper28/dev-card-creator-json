@@ -35,15 +35,16 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
             <div style={{ height: lineHeight }}>6</div>
             <div style={{ height: lineHeight }}>7</div>
             <div style={{ height: lineHeight }}>8</div>
+           
           </div>
-          
+        
           {/* JSON content */}
           <div className="py-3 flex-1">
             <div style={{ height: lineHeight }} className="whitespace-pre">
-              <span className="text-gray-400">// Developer Business Card</span>
+              <span className="text-gray-400">//Bless builder  Card</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre">
-              <span className="text-white">Business Card.json</span>
+              <span className="text-white">Bless Card.json</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre">
               <span className="json-punctuation">{"{"}</span>
@@ -55,21 +56,22 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ cardData, cardRef }) => {
               <span className="json-punctuation">,</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre pl-4">
-              <span className="json-property">"title"</span>
+              <span className="json-property">"Projects"</span>
               <span className="json-punctuation">: </span>
-              <span className="json-value">"{cardData.title}"</span>
+              <span className="json-value">{cardData.title}</span>
               <span className="json-punctuation">,</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre pl-4">
-              <span className="json-property">"email"</span>
+              <span className="json-property">"Roles"</span>
               <span className="json-punctuation">: </span>
               <span className="json-value">"{cardData.email}"</span>
               <span className="json-punctuation">,</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre pl-4">
-              <span className="json-property">"link"</span>
+              <span className="json-property">"member since"</span>
               <span className="json-punctuation">: </span>
               <span className="json-value">"{cardData.link}"</span>
+              <span className="json-punctuation">,</span>
             </div>
             <div style={{ height: lineHeight }} className="whitespace-pre">
               <span className="json-punctuation">{"}"}</span>
