@@ -58,11 +58,11 @@ const Index = () => {
           <div className="inline-block mb-6 p-2 bg-white/5 rounded-xl backdrop-blur-sm border border-gray-800">
             <Code className="text-gray-400 h-8 w-8" />
           </div>
-          <h3 className="text-5xl font-bold bg-clip-text text-transparent bg-white mb-6">
-            Developer <span className="text-gray-400">Business Card.json</span> Generator
+          <h3 className="text-5xl font-bold bg-clip-text text-transparent bg-green-400 mb-6">
+            Bless <span className="text-green-700">Builder Card.json</span> Generator
           </h3>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Create your own code-styled business card as a JSON object. Fill in your details and share your developer identity.
+            Create your own code-styled bless  card as a JSON object. Fill in your details and share your bless developer identity.
           </p>
           
           <div className="flex items-center justify-center gap-4 mt-8">

@@ -77,34 +77,34 @@ const CardForm: React.FC<CardFormProps> = ({
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="title">Title</Label>
+            <Label htmlFor="title">Projects</Label>
             <Input
               id="title"
               name="title"
-              placeholder="Software Engineer"
+              placeholder="4"
               value={cardData.title}
               onChange={handleChange}
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Role(s)</Label>
             <Input
               id="email"
               name="email"
-              type="email"
-              placeholder="you@example.com"
+              type="text"
+              placeholder="monk, enlightened, blessed"
               value={cardData.email}
               onChange={handleChange}
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="link">Website/Link</Label>
+            <Label htmlFor="link">Member since</Label>
             <Input
               id="link"
               name="link"
-              placeholder="yourwebsite.com"
+              placeholder="24/10/2024"
               value={cardData.link}
               onChange={handleChange}
             />
